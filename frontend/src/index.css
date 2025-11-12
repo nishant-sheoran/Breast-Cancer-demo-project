@@ -1,0 +1,234 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #062332;
+  background-color: #e7f5fb;
+  --aqua-50: #ecfeff;
+  --aqua-100: #cffafe;
+  --aqua-200: #a5f3fc;
+  --aqua-400: #22d3ee;
+  --aqua-500: #06b6d4;
+  --aqua-600: #0e7490;
+  --blue-500: #2563eb;
+  --blue-600: #1d4ed8;
+  --ink-900: #03172c;
+  --surface: rgba(255, 255, 255, 0.92);
+  --border: rgba(3, 23, 44, 0.12);
+  --shadow: 0 25px 50px rgba(14, 165, 233, 0.18);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at 15% 20%, rgba(45, 212, 191, 0.45), transparent 55%),
+      radial-gradient(circle at top, rgba(37, 99, 235, 0.25), transparent 60%),
+      linear-gradient(180deg, #e0f2fe 0%, #ecfeff 60%, #f0fdfa 100%);
+  color: var(--ink-900);
+}
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 3rem clamp(1.25rem, 4vw, 3rem) 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+header {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(14, 165, 233, 0.4));
+  border-radius: 24px;
+  padding: clamp(1.5rem, 3vw, 2.5rem);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: var(--shadow);
+}
+
+header .eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: #0d9488;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-bottom: 0.85rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: #0f172a;
+}
+
+.subtitle {
+  color: #0e7490;
+  margin-top: 0.75rem;
+  max-width: 60ch;
+  line-height: 1.5;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.75rem;
+}
+
+.column {
+  background: var(--surface);
+  border-radius: 22px;
+  padding: clamp(1.25rem, 2.5vw, 2rem);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+}
+
+.feature-form .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.input-block {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.input-label {
+  font-weight: 600;
+  color: #0f766e;
+}
+
+.input-block input {
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  border-radius: 14px;
+  padding: 0.65rem 0.9rem;
+  font-size: 1rem;
+  background: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-block input:focus {
+  outline: none;
+  border-color: var(--aqua-500);
+  box-shadow: 0 0 0 3px rgba(6, 182, 212, 0.2);
+}
+
+.input-block small {
+  color: #0ea5e9;
+}
+
+.feature-form button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  border: none;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--blue-500), var(--aqua-600));
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 15px 40px rgba(37, 99, 235, 0.35);
+}
+
+.feature-form button:hover:not(:disabled) {
+  transform: translateY(-2px);
+}
+
+.feature-form button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.card.error {
+  color: #b91c1c;
+}
+
+.card.muted {
+  color: #425061;
+}
+
+.badge {
+  width: fit-content;
+  padding: 0.4rem 1.25rem;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: #0f172a;
+  background: rgba(14, 165, 233, 0.14);
+}
+
+.badge.malignant {
+  color: #b91c1c;
+  background: rgba(185, 28, 28, 0.2);
+}
+
+.probability,
+td.malignant {
+  color: #be123c;
+}
+.badge.benign,
+td.benign {
+  color: #047857;
+  background: rgba(16, 185, 129, 0.14);
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(3, 23, 44, 0.08);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+thead {
+  background: rgba(8, 145, 178, 0.08);
+}
+
+th,
+td {
+  text-align: left;
+  padding: 0.65rem 0.85rem;
+}
+
+tbody tr:nth-child(odd) {
+  background: rgba(255, 255, 255, 0.78);
+}
+
+tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.58);
+}
+
+footer {
+  text-align: center;
+  color: #0f766e;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 600px) {
+  header,
+  .column {
+    padding: 1.25rem;
+  }
+
+  .feature-form button {
+    font-size: 0.95rem;
+  }
+}

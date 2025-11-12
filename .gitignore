@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+.venv/
+venv/
+env/
+.env
+*.pkl
+!model.pkl
+.DS_Store
+*.log
+node_modules/
