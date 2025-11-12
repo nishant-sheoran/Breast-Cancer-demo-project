@@ -298,8 +298,7 @@ def main():
     st.set_page_config(page_title="Breast Cancer Predictor", layout="wide")
     st.title("Breast Cancer Prediction - Interactive Frontend")
     st.caption(
-        "Enter the 10 diagnostic measurements the model expects. "
-        "The tool runs your local `model.pkl`, returns the prediction, and explains the reasoning."
+        "Enter the 10 diagnostic measurements for prediction and reasoning."
     )
 
     reference_frame, stats = get_reference_assets()
